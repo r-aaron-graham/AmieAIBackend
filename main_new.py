@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import requests
 
-app = Flask(__name__))
+app = Flask(__name__)
 
 # Define the /tts endpoint
 @app.route('/tts', methods=['POST'])
