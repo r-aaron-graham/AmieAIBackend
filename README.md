@@ -9,12 +9,14 @@ This repository contains exploratory Flask, speech, and integration code for AMI
 | `speak.py`, `tts_test.py` | Speech client experiments |
 | `load_user_preferences.py` | A user-preferences helper sketch |
 
-The local Flask launcher serves a landing page. The LiveKit token route returns HTTP 503 because the integration is absent from this checkout. The experimental TTS provider contract is unverified. For a runnable, self-contained portfolio demo, see the [AMIE classroom activity lookup demo](https://github.com/r-aaron-graham/Amie-Chatbot-Frontend/tree/undefined). It uses fictional educational activity cards and does not call this backend.
+The local Flask launcher serves a landing page. The LiveKit token route returns HTTP 503 because the integration is absent from this checkout. The experimental TTS provider contract is unverified. For a runnable, self-contained portfolio demo, see the [AMIE classroom activity lookup demo](https://github.com/r-aaron-graham/Amie-Chatbot-Frontend). It uses fictional educational activity cards and does not call this backend.
 
 To run the local launcher or check syntax without calling external services:
 
 ```bash
-python -m pip install Flask
+python -m pip install -r requirements.txt
 python -m compileall -q .
 python main.py
 ```
+
+Verify the local routes with `python -m unittest -v test_main`. Open http://127.0.0.1:3000 after starting main.py. The landing route returns HTTP 200, and the unfinished token route returns a JSON error with HTTP 503.
